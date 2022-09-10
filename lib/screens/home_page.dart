@@ -1,7 +1,11 @@
 import 'package:camp_yellow/widgets/achivements.dart';
+import 'package:camp_yellow/widgets/clan_members.dart';
 import 'package:camp_yellow/widgets/pink_text.dart';
 import 'package:camp_yellow/widgets/yellow_text.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/clan_diss.dart';
+import '../widgets/live_clan.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,41 +20,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        backgroundColor: Colors.black,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white.withOpacity(.60),
-        selectedFontSize: 14,
-        unselectedFontSize: 14,
-        onTap: (value) {
-          // Respond to item press.
-        },
-        items: const [
-          BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.home),
-          ),
-          BottomNavigationBarItem(
-            label: 'Star',
-            icon: Icon(Icons.star),
-          ),
-          BottomNavigationBarItem(
-            label: 'Leaderboard',
-            icon: Icon(Icons.leaderboard_sharp),
-          ),
-          BottomNavigationBarItem(
-            label: 'People',
-            icon: Icon(Icons.people_alt),
-          ),
-          BottomNavigationBarItem(
-            label: 'Profile Pic',
-            icon: Icon(Icons.account_circle_rounded),
-          ),
-        ],
-      ),
+      bottomNavigationBar: const CustomBottomNavBar(),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView(
@@ -177,14 +147,91 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            const Center(
-              child: YellowText(text: "See More"),
-            ),
+            const Center(child: YellowText(text: "See more")),
             SizedBox(height: achivementsListSpacing),
             const Divider(color: Colors.white),
+            SizedBox(height: achivementsListSpacing),
+            const YellowText(text: 'Live clan activities on platform'),
+            SizedBox(height: achivementsListSpacing),
+            const liveClan(title: 'Live trading championship'),
+            SizedBox(height: achivementsListSpacing),
+            const liveClan(title: 'Treasure hunt'),
+            SizedBox(height: achivementsListSpacing),
+            const Center(child: YellowText(text: 'See more')),
+            SizedBox(height: achivementsListSpacing),
+            const Divider(color: Colors.white),
+            SizedBox(height: achivementsListSpacing),
+            const YellowText(text: 'Clan discussions'),
+            SizedBox(height: achivementsListSpacing),
+            const ClanDiss(
+                topString: 'General thread:',
+                bottomString: '15 unread messages'),
+            SizedBox(height: achivementsListSpacing),
+            const ClanDiss(
+                topString: '(live) Anyone enthu for trading league..',
+                bottomString: '10 unread messages'),
+            SizedBox(height: achivementsListSpacing),
+            const ClanDiss(
+                topString: '(live) Anyone enthu for trading league..',
+                bottomString: '10 unread messages'),
+            SizedBox(height: achivementsListSpacing),
+            const Center(child: YellowText(text: "See more")),
+            SizedBox(height: achivementsListSpacing),
+            const Divider(color: Colors.white),
+            SizedBox(height: achivementsListSpacing),
+            const YellowText(text: 'Clan members'),
+            SizedBox(height: achivementsListSpacing),
+            ClamMembers(achivementsListSpacing: achivementsListSpacing),
+            SizedBox(height: achivementsListSpacing),
+            ClamMembers(achivementsListSpacing: achivementsListSpacing),
           ],
         ),
       ),
+    );
+  }
+}
+
+class CustomBottomNavBar extends StatelessWidget {
+  const CustomBottomNavBar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      backgroundColor: Colors.black,
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.white.withOpacity(.60),
+      selectedFontSize: 14,
+      unselectedFontSize: 14,
+      onTap: (value) {
+        // Respond to item press.
+      },
+      items: const [
+        BottomNavigationBarItem(
+          label: 'Home',
+          icon: Icon(Icons.home),
+        ),
+        BottomNavigationBarItem(
+          label: 'Star',
+          icon: Icon(Icons.star),
+        ),
+        BottomNavigationBarItem(
+          label: 'Leaderboard',
+          icon: Icon(Icons.leaderboard_sharp),
+        ),
+        BottomNavigationBarItem(
+          label: 'People',
+          icon: Icon(Icons.people_alt),
+        ),
+        BottomNavigationBarItem(
+          label: 'Profile Pic',
+          icon: Icon(Icons.account_circle_rounded),
+        ),
+      ],
     );
   }
 }
