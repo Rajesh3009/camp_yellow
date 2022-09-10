@@ -2,9 +2,9 @@
 import 'package:camp_yellow/widgets/white_text.dart';
 import 'package:flutter/material.dart';
 
-class liveClan extends StatelessWidget {
+class LiveClan extends StatelessWidget {
   final String title;
-  const liveClan({
+  const LiveClan({
     Key? key,
     required this.title,
   }) : super(key: key);
@@ -19,7 +19,7 @@ class liveClan extends StatelessWidget {
           Positioned(
             child: SizedBox(
               height: 200,
-              child: Image.asset('dark_gaming.jpg'),
+              child: Image.asset('assets/dark_gaming.jpg'),
             ),
           ),
           Positioned(

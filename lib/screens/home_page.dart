@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                       width: 1,
                     )),
                     child: Image.asset(
-                      'op.jpg',
+                      'assets/op.jpg',
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: achivementsListSpacing),
             AchivementsList(
               leading: const PinkText(text: 'Current league'),
-              trailing: Image.asset('icons8-shield-96.png'),
+              trailing: Image.asset('assets/icons8-shield-96.png'),
             ),
             SizedBox(height: achivementsListSpacing),
             const AchivementsList(
@@ -114,8 +114,9 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     width: 120,
                     child: Image.asset(
-                        'casual-life-3d-young-man-in-headset-using-computer.png'),
+                        'assets/casual-life-3d-young-man-in-headset-using-computer.png'),
                   ),
+                  const SizedBox(width: 5),
                   const Flexible(
                     child: SizedBox(
                       width: 300,
@@ -136,8 +137,9 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     width: 120,
                     child: Image.asset(
-                        'casual-life-3d-young-man-in-headset-using-computer.png'),
+                        'assets/casual-life-3d-young-man-in-headset-using-computer.png'),
                   ),
+                  const SizedBox(width: 5),
                   const Flexible(
                     child: SizedBox(
                       width: 300,
@@ -153,9 +155,9 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: achivementsListSpacing),
             const YellowText(text: 'Live clan activities on platform'),
             SizedBox(height: achivementsListSpacing),
-            const liveClan(title: 'Live trading championship'),
+            const LiveClan(title: 'Live trading championship'),
             SizedBox(height: achivementsListSpacing),
-            const liveClan(title: 'Treasure hunt'),
+            const LiveClan(title: 'Treasure hunt'),
             SizedBox(height: achivementsListSpacing),
             const Center(child: YellowText(text: 'See more')),
             SizedBox(height: achivementsListSpacing),

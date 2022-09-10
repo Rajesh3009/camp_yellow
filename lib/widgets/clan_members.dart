@@ -17,7 +17,7 @@ class ClamMembers extends StatelessWidget {
         SizedBox(
           width: 60,
           child: Image.asset(
-              'external-Avatar-avatars-others-inmotus-design-16.png'),
+              'assets/external-Avatar-avatars-others-inmotus-design-16.png'),
         ),
         SizedBox(width: achivementsListSpacing + 10),
         const PinkText(text: 'Lorem ipsum - Clan head'),
